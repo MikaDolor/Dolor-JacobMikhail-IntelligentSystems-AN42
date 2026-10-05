@@ -1,0 +1,55 @@
+DOCUMENTATION: AI-BASED LEGAL DECISION SUPPORT SYSTEM
+
+Title of Case Study: AI-Based Legal Decision Support System (Cybercrime CBR Engine)
+Author: Jacob Mikhail B. Dolor
+Course / Subject: Intelligent Systems
+
+
+1. SYSTEM OVERVIEW & DESCRIPTION OF CASE BASE
+
+This system implements Case-Based Reasoning (CBR) to assist defense attorneys by retrieving past cybercrime court precedents relevant to new electronic theft charges.
+
+The case base contains historical legal cases structured as structured key-value dictionaries. Each case consists of two main structures:
+
+• Problem Features: Defines the legal offense, attack medium, presence of unauthorized transfers, involvement of cryptocurrency, and whether intent (mens rea) was established.
+
+• Solution Architecture: Contains the recommended legal defense strategy, statutory precedent clause, and technical argument pattern.
+
+
+2. SIMILARITY ASSESSMENT METHODOLOGY
+
+To evaluate similarity between a new client case and stored historical cases, a Weighted Feature Scoring algorithm is used:
+
+Similarity Score = Sum(Weight * Feature_Match)
+
+Feature Weights:
+- Offense Type (30%): Core charge classification (e.g., digital fraud vs. electronic transfer theft).
+- Unauthorized Transfer Flag (25%): Indicates monetary displacement via electronic channels.
+- Medium (20%): Method of attack vector (e.g., phishing, API extraction, session hijacking).
+- Crypto Involvement (15%): Involvement of decentralized ledger assets.
+- Intent Proven (10%): State of prosecution's mens rea evidence.
+
+The system calculates total match confidence (0% to 100%) and retrieves the highest-ranking historical precedent.
+
+
+3. ADAPTATION LOGIC
+
+Because cybercrime technology evolves rapidly, retrieved past solutions rarely fit new cases perfectly. The system applies three rule-based adaptation policies to adjust the retrieved legal arguments to the new technical context:
+
+1. Crypto Adaptation: If cryptocurrency is involved in the new case but was absent in the precedent, the reasoning engine appends blockchain ledger verification and wallet trace analysis arguments to the defense strategy.
+
+2. Medium Vector Adjustment: If the attack medium differs (e.g., from phishing to API key extraction), the defense strategy shifts technical targets accordingly.
+
+3. Intent Mitigation: If intent is not yet proven in the target case, the engine appends statutory defense clauses covering automated script execution without human knowledge.
+
+
+4. RETAIN STAGE & SYSTEM LEARNING
+
+Once a final adapted defense strategy is established and a verdict is achieved, the Retain Stage executes. The new case, complete with its updated problem parameters and adapted solution, is assigned a unique identifier (e.g., CASE_2026_05) and saved to the case base. This expands the system's knowledge base for future cybercrime offenses without requiring core code changes.
+
+
+5. SCREENSHOTS OF PROGRAM EXECUTION
+
+  
+
+(Insert screenshots of your terminal running legal_cbr_dss.py showing sections [1] through [4] from the program output).
